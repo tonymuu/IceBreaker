@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50BF7989E1B91EC31661F644 /* Pods_icebreaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 581D17E026D5B776F0B5A855 /* Pods_icebreaker.framework */; };
+		EA38977E1DB1C42200B3C6C0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA38977D1DB1C42200B3C6C0 /* FBSDKCoreKit.framework */; };
+		EA3897801DB1C42600B3C6C0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA38977F1DB1C42600B3C6C0 /* Bolts.framework */; };
+		EA3897821DB1C42900B3C6C0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3897811DB1C42900B3C6C0 /* FBSDKLoginKit.framework */; };
+		EA3897841DB1C42C00B3C6C0 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3897831DB1C42C00B3C6C0 /* FBSDKShareKit.framework */; };
+		EA5574221DB1BABF004094CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5574211DB1BABF004094CE /* AppDelegate.swift */; };
+		EA5574241DB1BABF004094CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5574231DB1BABF004094CE /* ViewController.swift */; };
+		EA5574271DB1BABF004094CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5574251DB1BABF004094CE /* Main.storyboard */; };
+		EA5574291DB1BABF004094CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5574281DB1BABF004094CE /* Assets.xcassets */; };
+		EA55742C1DB1BABF004094CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA55742A1DB1BABF004094CE /* LaunchScreen.storyboard */; };
+		EAA5C8991DB1CC3900B9A0B0 /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA5C8981DB1CC3900B9A0B0 /* YourProfileViewController.swift */; };
+		EAA5C89C1DB1CCD200B9A0B0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA5C89B1DB1CCD200B9A0B0 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		581D17E026D5B776F0B5A855 /* Pods_icebreaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_icebreaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C8E96857C391CC1D501F0E /* Pods-icebreaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icebreaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-icebreaker/Pods-icebreaker.release.xcconfig"; sourceTree = "<group>"; };
+		AD89360D9EA2C419E60B9A02 /* Pods-icebreaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-icebreaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-icebreaker/Pods-icebreaker.debug.xcconfig"; sourceTree = "<group>"; };
+		EA38977D1DB1C42200B3C6C0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		EA38977F1DB1C42600B3C6C0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		EA3897811DB1C42900B3C6C0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		EA3897831DB1C42C00B3C6C0 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "Pods/../build/Debug-iphoneos/FBSDKShareKit/FBSDKShareKit.framework"; sourceTree = "<group>"; };
+		EA3897851DB1C54600B3C6C0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		EA55741E1DB1BABF004094CE /* icebreaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icebreaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA5574211DB1BABF004094CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA5574231DB1BABF004094CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA5574261DB1BABF004094CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA5574281DB1BABF004094CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA55742B1DB1BABF004094CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA55742D1DB1BABF004094CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA5C8981DB1CC3900B9A0B0 /* YourProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
+		EAA5C89B1DB1CCD200B9A0B0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA55741B1DB1BABE004094CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA3897841DB1C42C00B3C6C0 /* FBSDKShareKit.framework in Frameworks */,
+				EA3897821DB1C42900B3C6C0 /* FBSDKLoginKit.framework in Frameworks */,
+				EA3897801DB1C42600B3C6C0 /* Bolts.framework in Frameworks */,
+				EA38977E1DB1C42200B3C6C0 /* FBSDKCoreKit.framework in Frameworks */,
+				50BF7989E1B91EC31661F644 /* Pods_icebreaker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6634DDBF814226B8A9FE8015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA3897831DB1C42C00B3C6C0 /* FBSDKShareKit.framework */,
+				EA3897811DB1C42900B3C6C0 /* FBSDKLoginKit.framework */,
+				EA38977F1DB1C42600B3C6C0 /* Bolts.framework */,
+				EA38977D1DB1C42200B3C6C0 /* FBSDKCoreKit.framework */,
+				581D17E026D5B776F0B5A855 /* Pods_icebreaker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C863CCB0775BEDA49DC9195F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD89360D9EA2C419E60B9A02 /* Pods-icebreaker.debug.xcconfig */,
+				92C8E96857C391CC1D501F0E /* Pods-icebreaker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA5574151DB1BABE004094CE = {
+			isa = PBXGroup;
+			children = (
+				EA5574201DB1BABF004094CE /* icebreaker */,
+				EA55741F1DB1BABF004094CE /* Products */,
+				C863CCB0775BEDA49DC9195F /* Pods */,
+				6634DDBF814226B8A9FE8015 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA55741F1DB1BABF004094CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA55741E1DB1BABF004094CE /* icebreaker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA5574201DB1BABF004094CE /* icebreaker */ = {
+			isa = PBXGroup;
+			children = (
+				EAA5C89B1DB1CCD200B9A0B0 /* Constants.swift */,
+				EAA5C89A1DB1CC4900B9A0B0 /* ViewControllers */,
+				EA5574211DB1BABF004094CE /* AppDelegate.swift */,
+				EA5574251DB1BABF004094CE /* Main.storyboard */,
+				EA5574281DB1BABF004094CE /* Assets.xcassets */,
+				EA55742A1DB1BABF004094CE /* LaunchScreen.storyboard */,
+				EA55742D1DB1BABF004094CE /* Info.plist */,
+				EA3897851DB1C54600B3C6C0 /* Bridging-Header.h */,
+			);
+			path = icebreaker;
+			sourceTree = "<group>";
+		};
+		EAA5C89A1DB1CC4900B9A0B0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA5574231DB1BABF004094CE /* ViewController.swift */,
+				EAA5C8981DB1CC3900B9A0B0 /* YourProfileViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA55741D1DB1BABE004094CE /* icebreaker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA5574301DB1BABF004094CE /* Build configuration list for PBXNativeTarget "icebreaker" */;
+			buildPhases = (
+				87DB5E29242A1A96AED348F2 /* [CP] Check Pods Manifest.lock */,
+				EA55741A1DB1BABE004094CE /* Sources */,
+				EA55741B1DB1BABE004094CE /* Frameworks */,
+				EA55741C1DB1BABE004094CE /* Resources */,
+				0F63525E60E371EC8E179ADA /* [CP] Embed Pods Frameworks */,
+				6CB48CE772CD6F4DC8254C88 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = icebreaker;
+			productName = icebreaker;
+			productReference = EA55741E1DB1BABF004094CE /* icebreaker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA5574161DB1BABE004094CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = ibs;
+				TargetAttributes = {
+					EA55741D1DB1BABE004094CE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = FGWM5JGVBM;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EA5574191DB1BABE004094CE /* Build configuration list for PBXProject "icebreaker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA5574151DB1BABE004094CE;
+			productRefGroup = EA55741F1DB1BABF004094CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA55741D1DB1BABE004094CE /* icebreaker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA55741C1DB1BABE004094CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA55742C1DB1BABF004094CE /* LaunchScreen.storyboard in Resources */,
+				EA5574291DB1BABF004094CE /* Assets.xcassets in Resources */,
+				EA5574271DB1BABF004094CE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F63525E60E371EC8E179ADA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icebreaker/Pods-icebreaker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CB48CE772CD6F4DC8254C88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-icebreaker/Pods-icebreaker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87DB5E29242A1A96AED348F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA55741A1DB1BABE004094CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAA5C8991DB1CC3900B9A0B0 /* YourProfileViewController.swift in Sources */,
+				EA5574241DB1BABF004094CE /* ViewController.swift in Sources */,
+				EA5574221DB1BABF004094CE /* AppDelegate.swift in Sources */,
+				EAA5C89C1DB1CCD200B9A0B0 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA5574251DB1BABF004094CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA5574261DB1BABF004094CE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EA55742A1DB1BABF004094CE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA55742B1DB1BABF004094CE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA55742E1DB1BABF004094CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA55742F1DB1BABF004094CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA5574311DB1BABF004094CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD89360D9EA2C419E60B9A02 /* Pods-icebreaker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FGWM5JGVBM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+				);
+				INFOPLIST_FILE = icebreaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibs.icebreaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "icebreaker/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EA5574321DB1BABF004094CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92C8E96857C391CC1D501F0E /* Pods-icebreaker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FGWM5JGVBM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKCoreKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKLoginKit",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/FBSDKShareKit",
+				);
+				INFOPLIST_FILE = icebreaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibs.icebreaker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "icebreaker/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA5574191DB1BABE004094CE /* Build configuration list for PBXProject "icebreaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA55742E1DB1BABF004094CE /* Debug */,
+				EA55742F1DB1BABF004094CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA5574301DB1BABF004094CE /* Build configuration list for PBXNativeTarget "icebreaker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA5574311DB1BABF004094CE /* Debug */,
+				EA5574321DB1BABF004094CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA5574161DB1BABE004094CE /* Project object */;
+}
