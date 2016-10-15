@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.widget.TextView;
+import com.facebook.FacebookSdk;
 
 public class MainActivityWatch extends Activity {
 
