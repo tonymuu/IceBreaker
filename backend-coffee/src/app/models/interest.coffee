@@ -10,5 +10,4 @@ interestSchema = mongoose.Schema(
   genre: String
   value: String)
 
-
 module.exports = mongoose.model('Interest', interestSchema)
