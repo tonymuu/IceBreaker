@@ -1,2 +1,2 @@
-include ':mobile', ':wear', ':facebook-android-sdk-4.16.1'
+include ':mobile', ':wear', ':facebook-android-sdk-4.16.1', ':retrofit-2.1.0'
 
