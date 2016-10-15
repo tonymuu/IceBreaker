@@ -12,6 +12,11 @@ userSchema = mongoose.Schema(
   name: String
   picture: String
   location: String
+
+  local:
+    email: String
+    password: String
+
   bio: [
     type: String
   ]
