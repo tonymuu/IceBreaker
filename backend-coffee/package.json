@@ -1,0 +1,46 @@
+{
+  "name": "koalie_backend",
+  "version": "1.0.0",
+  "description": "backend for the koalie app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "latest",
+    "body-parser": "^1.0.0",
+    "bson": "^0.5.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "express": "^4.0.0",
+    "express-session": "~1.0.0",
+    "method-override": "~1.0.0",
+    "mongodb": "^1.4.40",
+    "mongoose": "~3.8.1",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-facebook": "~1.0.2",
+    "passport-facebook-token": "^3.3.0",
+    "passport-google-oauth": "~0.1.5",
+    "passport-local": "~0.1.6",
+    "passport-twitter": "~1.0.2"
+  },
+  "devDependencies": {
+    "ejs": "~0.8.5",
+    "grunt": "^1.0.1",
+    "grunt-coffeelint": "0.0.16",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-execute": "^0.2.2",
+    "grunt-express-server": "^0.5.3",
+    "grunt-node-inspector": "^0.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tonymuu@bitbucket.org/tonymuu/koaliebackend.git"
+  },
+  "author": "Tony Mu",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/tonymuu/koaliebackend#readme"
+}
