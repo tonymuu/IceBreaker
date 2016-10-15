@@ -42,7 +42,7 @@
   app.set('view engine', 'ejs');
 
   app.use(session({
-    secret: ''
+    secret: 'smartins'
   }));
 
   app.use(passport.initialize());

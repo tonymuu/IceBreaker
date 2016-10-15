@@ -32,7 +32,7 @@ app.use bodyParser()
 app.set('view engine', 'ejs')
 
 # set up passport
-app.use session { secret: '' }
+app.use session { secret: 'smartins' }
 app.use passport.initialize()
 app.use passport.session()
 app.use flash()

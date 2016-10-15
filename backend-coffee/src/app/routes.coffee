@@ -6,37 +6,53 @@ module.exports = (app, passport) ->
   app.get('/auth/facebook/token', passport.authenticate('facebook-token'), (req, res) ->
     return res.send(200))
 
-  app.post('/add_user', isLoggedIn, (req, res) ->
-    id = req.user._id
-    User.findById(id).exec (err, user) ->
-        if err? then return console.log err
-        user.picture = req.query.image_url
-        user.email = req.query.email
-        user.token = req.query.token
-        user.name = req.query.name
-        user.save (err, user) ->
-          if err? then return console.log err
-          res.send(user))
+  app.post('/gen_test_user', (req, res) ->
+    user = new User()
+    user.id = '0'
+    user.token = '0'
+    user.email = 'test@test.net'
+    user.name = 'tester'
+    user.picture = ''
+    user.bio = 'nothing'
+    user.save (err, user) ->
+      if err? then return console.log err
+      res.send(200))
+
   app.post('/update_location', isLoggedIn, (req, res) ->
-    userId = req.query._id
-    User.findById(peerId).exec (err, user) ->
+    userId = req.user._id
+    User.findById(userId).exec (err, user) ->
         if err? then return console.log err
-        user.location = req.query.location
+        user.location.latitude = req.query.latitude
+        user.location.longitude = req.query.longitude
         user.save (err, user) ->
           if err? then return console.log err
           res.send(200))
 
-  # app.get('/get_peers', isLoggedIn, (req, res) ->
-  #   peerId = req.query.userId
-  #   Peer.findById(peerId).exec (err, peer) ->
-  #       if err? then return console.log err
-  #       res.send(peer))
-        
-  app.get('/get_user', isLoggedIn, (req, res) ->
-    userId = req.query.userId
+  app.post('/update_info', isLoggedIn, (req, res) ->
+    userId = req.user._id
     User.findById(userId).exec (err, user) ->
+        if err? then return console.log err
+        user.bio = req.query.info 
+        user.save (err, user) ->
+          if err? then return console.log err
+          res.send(200))
+
+  app.post('/update_interest', isLoggedIn, (req, res) ->
+    userId = req.user._id
+    User.findById(userId).exec (err, user) ->
+        if err? then return console.log err
+        user.interests[req.query.id] = req.query.new_interest
+        user.save (err, user) ->
+          if err? then return console.log err
+          res.send(200))
+
+  app.post('/get_peers', isLoggedIn, (req, res) ->
+    console.log req.query.ids
+    ids = req.query.ids.toString().split("'")
+    console.log ids
+    User.find({ id: { $in: ids } }).exec (err, users) ->
       if err? then return console.log err
-      res.send(user))
+      res.send(users))
 
   # app.post('/create_media', isLoggedIn, (req, res) ->
   #   newMedia = new Media()
@@ -119,35 +135,35 @@ isLoggedIn = (req, res, next) ->
   if req.isAuthenticated() then return next()
   else res.redirect('/')
 
-addUserToEvent = (userId, eventId) ->
-  condition = '_id': eventId
-  query = $push: "member_ids": userId
-  Event.update(condition, query, (err, numAffected) ->
-    if err? then console.log err)
+# addUserToEvent = (userId, eventId) ->
+#   condition = '_id': eventId
+#   query = $push: "member_ids": userId
+#   Event.update(condition, query, (err, numAffected) ->
+#     if err? then console.log err)
 
-addEventToUser = (userId, eventId) ->
-  condition = '_id': userId
-  query = $push: "facebook.events": eventId
-  User.update(condition, query, (err, numAffected) ->
-    if err? then console.log err)
+# addEventToUser = (userId, eventId) ->
+#   condition = '_id': userId
+#   query = $push: "facebook.events": eventId
+#   User.update(condition, query, (err, numAffected) ->
+#     if err? then console.log err)
 
-removeUserFromEvent = (userId, eventId) ->
-  condition = '_id': eventId
-  query = $pullAll: "member_ids": userId
-  Event.findOneAndUpdate(condition, query, (err, numAffected) ->
-    if err? then console.log err)
+# removeUserFromEvent = (userId, eventId) ->
+#   condition = '_id': eventId
+#   query = $pullAll: "member_ids": userId
+#   Event.findOneAndUpdate(condition, query, (err, numAffected) ->
+#     if err? then console.log err)
 
-addMediaToEvent = (eventId, mediaId) ->
-  condition = '_id': eventId
-  query = $push: 'media_ids': mediaId
-  Event.findOneAndUpdate(condition, query, (err, numAffected) ->
-    if err? then console.log err)
+# addMediaToEvent = (eventId, mediaId) ->
+#   condition = '_id': eventId
+#   query = $push: 'media_ids': mediaId
+#   Event.findOneAndUpdate(condition, query, (err, numAffected) ->
+#     if err? then console.log err)
 
-voteMedia = (mediaId, userId, likes) ->
-  Media.findById(mediaId).exec (err, media) ->
-    if err then console.log err
-    if media.voted_members.indexOf(userId) == -1
-      media.likes = likes
-      media.voted_members.push userId
-      media.save (err, media) ->
-        if err then console.log err
+# voteMedia = (mediaId, userId, likes) ->
+#   Media.findById(mediaId).exec (err, media) ->
+#     if err then console.log err
+#     if media.voted_members.indexOf(userId) == -1
+#       media.likes = likes
+#       media.voted_members.push userId
+#       media.save (err, media) ->
+#         if err then console.log err

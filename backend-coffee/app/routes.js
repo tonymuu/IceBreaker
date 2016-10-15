@@ -1,5 +1,5 @@
 (function() {
-  var Event, User, addEventToUser, addMediaToEvent, addUserToEvent, isLoggedIn, removeUserFromEvent, voteMedia;
+  var Event, User, isLoggedIn;
 
   Event = require('../app/models/interest');
 
@@ -9,33 +9,31 @@
     app.get('/auth/facebook/token', passport.authenticate('facebook-token'), function(req, res) {
       return res.send(200);
     });
-    app.post('/add_user', isLoggedIn, function(req, res) {
-      var id;
-      id = req.user._id;
-      return User.findById(id).exec(function(err, user) {
+    app.post('/gen_test_user', function(req, res) {
+      var user;
+      user = new User();
+      user.id = '0';
+      user.token = '0';
+      user.email = 'test@test.net';
+      user.name = 'tester';
+      user.picture = '';
+      user.bio = 'nothing';
+      return user.save(function(err, user) {
         if (err != null) {
           return console.log(err);
         }
-        user.picture = req.query.image_url;
-        user.email = req.query.email;
-        user.token = req.query.token;
-        user.name = req.query.name;
-        return user.save(function(err, user) {
-          if (err != null) {
-            return console.log(err);
-          }
-          return res.send(user);
-        });
+        return res.send(200);
       });
     });
     app.post('/update_location', isLoggedIn, function(req, res) {
       var userId;
-      userId = req.query._id;
-      return User.findById(peerId).exec(function(err, user) {
+      userId = req.user._id;
+      return User.findById(userId).exec(function(err, user) {
         if (err != null) {
           return console.log(err);
         }
-        user.location = req.query.location;
+        user.location.latitude = req.query.latitude;
+        user.location.longitude = req.query.longitude;
         return user.save(function(err, user) {
           if (err != null) {
             return console.log(err);
@@ -44,14 +42,52 @@
         });
       });
     });
-    return app.get('/get_user', isLoggedIn, function(req, res) {
+    app.post('/update_info', isLoggedIn, function(req, res) {
       var userId;
-      userId = req.query.userId;
+      userId = req.user._id;
       return User.findById(userId).exec(function(err, user) {
         if (err != null) {
           return console.log(err);
         }
-        return res.send(user);
+        user.bio = req.query.info;
+        return user.save(function(err, user) {
+          if (err != null) {
+            return console.log(err);
+          }
+          return res.send(200);
+        });
+      });
+    });
+    app.post('/update_interest', isLoggedIn, function(req, res) {
+      var userId;
+      userId = req.user._id;
+      return User.findById(userId).exec(function(err, user) {
+        if (err != null) {
+          return console.log(err);
+        }
+        user.interests[req.query.id] = req.query.new_interest;
+        return user.save(function(err, user) {
+          if (err != null) {
+            return console.log(err);
+          }
+          return res.send(200);
+        });
+      });
+    });
+    return app.post('/get_peers', function(req, res) {
+      var ids;
+      console.log(req.query.ids);
+      ids = req.query.ids.toString().split("'");
+      console.log(ids);
+      return User.find({
+        id: {
+          $in: ids
+        }
+      }).exec(function(err, users) {
+        if (err != null) {
+          return console.log(err);
+        }
+        return res.send(users);
       });
     });
   };
@@ -62,91 +98,6 @@
     } else {
       return res.redirect('/');
     }
-  };
-
-  addUserToEvent = function(userId, eventId) {
-    var condition, query;
-    condition = {
-      '_id': eventId
-    };
-    query = {
-      $push: {
-        "member_ids": userId
-      }
-    };
-    return Event.update(condition, query, function(err, numAffected) {
-      if (err != null) {
-        return console.log(err);
-      }
-    });
-  };
-
-  addEventToUser = function(userId, eventId) {
-    var condition, query;
-    condition = {
-      '_id': userId
-    };
-    query = {
-      $push: {
-        "facebook.events": eventId
-      }
-    };
-    return User.update(condition, query, function(err, numAffected) {
-      if (err != null) {
-        return console.log(err);
-      }
-    });
-  };
-
-  removeUserFromEvent = function(userId, eventId) {
-    var condition, query;
-    condition = {
-      '_id': eventId
-    };
-    query = {
-      $pullAll: {
-        "member_ids": userId
-      }
-    };
-    return Event.findOneAndUpdate(condition, query, function(err, numAffected) {
-      if (err != null) {
-        return console.log(err);
-      }
-    });
-  };
-
-  addMediaToEvent = function(eventId, mediaId) {
-    var condition, query;
-    condition = {
-      '_id': eventId
-    };
-    query = {
-      $push: {
-        'media_ids': mediaId
-      }
-    };
-    return Event.findOneAndUpdate(condition, query, function(err, numAffected) {
-      if (err != null) {
-        return console.log(err);
-      }
-    });
-  };
-
-  voteMedia = function(mediaId, userId, likes) {
-    return Media.findById(mediaId).exec(function(err, media) {
-      if (err) {
-        console.log(err);
-      }
-      if (media.voted_members.indexOf(userId) === -1) {
-        media.likes = likes;
-        media.voted_members.push(userId);
-        return media.save(function(err, media) {
-          if (err) {
-            return console.log(err);
-          }
-        });
-      }
-    });
   };
 
 }).call(this);
