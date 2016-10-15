@@ -32,25 +32,13 @@ app.use bodyParser()
 app.set('view engine', 'ejs')
 
 # set up passport
-app.use session { secret: 'tonymuisanawesomedeveloperwhowrotethisapp' }
+app.use session { secret: '' }
 app.use passport.initialize()
 app.use passport.session()
 app.use flash()
 
 # routes
 require('./app/routes.js')(app, passport)
-
-# mongoHost = 'localhost'
-# mongoPort = 27017
-# collectionDriver = ""
-#
-# mongoClient = new MongoClient(new Server(mongoHost, mongoPort))
-# mongoClient.open (err, mongoClient) ->
-#   if !mongoClient
-#     console.error "Error! Exiting... No MongoDB found."
-#     process.exit(1)
-#   db = mongoClient.db "MyDatabase"
-#   collectionDriver = new CollectionDriver db
 
 app.use express.static path.join __dirname, 'public'
 

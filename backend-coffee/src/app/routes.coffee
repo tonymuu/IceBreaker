@@ -1,5 +1,4 @@
-Media = require '../app/models/media'
-Event = require '../app/models/event'
+Event = require '../app/models/interest'
 User = require '../app/models/user'
 
 module.exports = (app, passport) ->

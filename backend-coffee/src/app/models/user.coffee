@@ -6,19 +6,17 @@ ObjectId = mongoose.Schema.Types.ObjectId
 
 # define the schema
 userSchema = mongoose.Schema(
-  local:
-    email: String
-    password: String
-  facebook:
-    id: String
-    token: String
-    email: String
-    name: String
-    picture: String
-    events: [
-      type: ObjectId
-      ref: 'Event'
-    ])
+  id: String
+  token: String
+  email: String
+  name: String
+  picture: String
+  bio: [
+    type: String
+  ]
+  interests: [
+    type: String
+  ])
 
 
 # methods
