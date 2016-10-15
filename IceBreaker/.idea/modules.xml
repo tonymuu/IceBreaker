@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IceBreaker.iml" filepath="$PROJECT_DIR$/IceBreaker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/facebook-android-sdk-4.16.1/facebook-android-sdk-4.16.1.iml" filepath="$PROJECT_DIR$/facebook-android-sdk-4.16.1/facebook-android-sdk-4.16.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobile/mobile.iml" filepath="$PROJECT_DIR$/mobile/mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/wear/wear.iml" filepath="$PROJECT_DIR$/wear/wear.iml" />
     </modules>

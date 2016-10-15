@@ -1,1 +1,2 @@
-include ':mobile', ':wear'
+include ':mobile', ':wear', ':facebook-android-sdk-4.16.1'
+
