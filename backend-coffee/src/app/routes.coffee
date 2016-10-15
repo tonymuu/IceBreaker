@@ -6,6 +6,34 @@ module.exports = (app, passport) ->
   app.get('/auth/facebook/token', passport.authenticate('facebook-token'), (req,res) ->
     return res.send(200))
 
+  app.post('/add_user', (req, res) ->
+    newUser = new User()
+    newUser.id = req.query.id
+    newUser.picture = req.query.image_url
+    newUser.email = req.query.email
+    newUser.token = req.query.token
+    newUser.name = req.query.name
+    newUser.save (err, user) ->
+      if err? then return console.log err
+      res.send(user))
+
+  app.post('/update_location', isLoggedIn, (req, res) ->
+    userId = req.query._id
+    User.findById(peerId).exec (err, user) ->
+        if err? then return console.log err
+        user.location = req.query.location
+        user.save (err, user) ->
+          if err? then return console.log err
+          res.send(200))
+
+
+  app.post('/get_peer_info', isLoggedIn, (req, res) ->
+    peerId = req.query.userId
+    Peer.findById(peerId).exec (err, peer) ->
+        if err? then return console.log err
+        res.send(peer.bio))
+        
+
   app.get('/find_user', isLoggedIn, (req, res) ->
     userId = req.query.userId
     User.findById(userId).exec (err, user) ->
