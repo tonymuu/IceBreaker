@@ -1,0 +1,6 @@
+framework module Pods_icebreaker {
+  umbrella header "Pods-icebreaker-umbrella.h"
+
+  export *
+  module * { export * }
+}
